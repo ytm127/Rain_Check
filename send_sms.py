@@ -16,16 +16,24 @@ weather_desc = (response.json()['weather'][0]["description"]).encode("utf-8")
 # current temperature. Convert from flaot to string
 temp_kelvin = response.json()['main']["temp"]
 temp_f = str((temp_kelvin - 273.15)* 9/5 + 32 )
+info = "Right now, it looks like " + weather_desc + " with a temperature of " + temp_f + " degrees fahrenheit."
+# print(info)
 
-print(weather_desc + " " + temp_f)
+# determine final message depending on forecast
+if "rain" in weather_desc:
+    message = info + '\n' + "It is raining right now. Bring an umbrella."
+else:
+    message = info + '\n' + "It is not raining right now. Enjoy the weather!"
+
+print(message)
 
 
-# message = client.messages \
-#                 .create(
-#                      body=response.json().main,
-#                      from_='+14792822715',
-#                      to='+14799258596'
-#                  )
+message = client.messages \
+                .create(
+                     body=info,
+                     from_='+14792822715',
+                     to='+14799258596'
+                 )
 
 
-# print(message.sid)
+print(message.sid)
