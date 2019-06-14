@@ -27,7 +27,7 @@ if rain == True:
 
     message = client.messages \
                 .create(
-                     body="\nGood Morning! \n" + notice + "- RainCheck :)",
+                     body="Good Morning! \n" + notice + "- RainCheck :)",
                      from_='+14792822715',
                      to='+14799258596'
                  )
@@ -36,9 +36,6 @@ if rain == True:
     print(message.sid)
 
 
-# else:
-#     notice = "No rain! woohoo!"
-#     print('No rain! woohoo!')
 
 
 
