@@ -23,7 +23,7 @@ for i in range(6):
 
 # final determination
 if rain == True:
-    notice = "There is rain in the forecast between now and 11pm! \n\nBRING YOUR UMBRELLA! \n"
+    notice = "There is rain in the forecast in Fayetteville, AR between now and 11pm! \n\nBRING YOUR UMBRELLA! \n"
 
     message = client.messages \
                 .create(
